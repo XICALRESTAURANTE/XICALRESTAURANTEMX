@@ -111,7 +111,12 @@ footer { padding:28px 20px; background:#d97d4f22; color:#1c1c1c; }
 /* Responsive */
 @media (max-width:900px){ .reservation-content { flex-direction:column; } }
 @media (max-width:800px){ .history .row { flex-direction: column; } .history .row .small-thumb { width: 100%; height:300px; } .history .texts { width:100%; } }
-@media (max-width:600px){ .nav-left, .nav-right { display:none; } .hamburger { display:block; } .hero-text { font-size:2.5rem; } }
+@media (max-width:600px){
+  .nav-left { display:none; } /* solo ocultar historia y menú si quieres */
+  .nav-right { display:flex; } /* mostrar reservaciones en móvil */
+  .hamburger { display:block; }
+  .hero-text { font-size:2.5rem; }
+}
 
 </style>
 </head>
@@ -322,6 +327,7 @@ footer { padding:28px 20px; background:#d97d4f22; color:#1c1c1c; }
 </div>
 
 <script>
+  
 /* Header scroll */
 window.addEventListener('scroll',()=>{document.querySelector('header').classList.toggle('show', window.scrollY>80);});
 
